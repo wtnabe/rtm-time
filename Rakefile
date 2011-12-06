@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- mode: ruby; coding: utf-8 -*-
 
 require 'rubygems'
 require 'bundler'
@@ -14,9 +14,9 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "rtmtime"
-  gem.homepage = "http://github.com/wtnabe/rtmtime"
-  gem.license = "MIT"
+  gem.name = "rtmt-ime"
+  gem.homepage = "http://github.com/wtnabe/rtmt-ime"
+  gem.license = "BSD"
   gem.summary = %Q{TODO: one-line summary of your gem}
   gem.description = %Q{TODO: longer description of your gem}
   gem.email = "wtnabe@gmail.com"
@@ -38,12 +38,12 @@ end
 
 task :default => :spec
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
+require 'rdoc/task'
+RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "rtmtime #{version}"
+  rdoc.title = "rtm-time #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
