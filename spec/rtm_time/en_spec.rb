@@ -68,4 +68,15 @@ describe RtmTime::En do
       }
     end
   end
+
+  describe 'unsupported' do
+    context '1.2時間' do
+      subject {
+        RtmTime::En.parse( '1.2時間' ).to_h
+      }
+      it {
+        should == {:day => 0, :hour => 0, :min => 0}
+      }
+    end
+  end
 end

@@ -32,7 +32,7 @@ module RtmTime
         assort( num, unit )
       }
       @day  = @day.to_i
-      @min  = (@min.to_i + (@hour - @hour.to_i) * 60).round
+      @min  = (@min.to_i + ((@hour || 0) - @hour.to_i) * 60).round
       @hour = @hour.to_i
     end
 
