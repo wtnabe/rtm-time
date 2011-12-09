@@ -8,7 +8,7 @@ describe RtmTime::Ja do
         RtmTime::Ja.parse( '2時間および15分' ).to_h
       }
       it {
-        should == {:day => nil, :hour => 2 , :min => 15}
+        should == {:day => 0, :hour => 2 , :min => 15}
       }
     end
 
@@ -17,7 +17,17 @@ describe RtmTime::Ja do
         RtmTime::Ja.parse( '15分と2時間' ).to_h
       }
       it {
-        should == {:day => nil, :hour => 2, :min => 15}
+        should == {:day => 0, :hour => 2, :min => 15}
+      }
+    end
+
+    context '8h分と2m時間' do
+      subject {
+        RtmTime::Ja.parse( '8h分と2時間m' ).to_h
+      }
+      # first in
+      it {
+        should == {:day => 0, :hour => 8, :min => 0}
       }
     end
   end

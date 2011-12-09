@@ -11,11 +11,11 @@ module RtmTime
       super
       case unit
       when /\A日/u
-        @day  = num.to_i
+        @day  ||= num.to_i
       when /\A時/u
-        @hour = num.to_f
+        @hour ||= num.to_f
       when /\A分/u
-        @min  = num.to_i
+        @min  ||= num.to_i
       end
     end
   end

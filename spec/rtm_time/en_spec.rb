@@ -5,22 +5,39 @@ describe RtmTime::En do
   describe 'only integer' do
     context '2h15m' do
       subject {
-        RtmTime::En.parse( '2h15m' ).to_hash
+        RtmTime::En.parse( '2h15m' )
       }
       it {
-        should == {:day => nil, :hour => 2, :min => 15}
+        subject.to_hash.should == {:day => 0, :hour => 2, :min => 15}
+      }
+      it {
+        subject.to_a.should == [0, 2, 15]
       }
     end
 
     context ' 2 hrs 15 min ' do
       subject {
-        RtmTime::En.parse( ' 2 hrs 15 min ' ).to_h
+        RtmTime::En.parse( ' 2 hrs 15 min ' )
       }
       it {
-        should == {:day => nil, :hour => 2, :min => 15}
+        subject.to_h.should == {:day => 0, :hour => 2, :min => 15}
+      }
+      it {
+        subject.to_a.should == [0, 2, 15]
       }
     end
 
+    context '1d 2h' do
+      subject {
+        RtmTime::En.parse('1d 2h')
+      }
+      it {
+        subject.to_h.should == {:day => 1, :hour => 2, :min => 0}
+      }
+      it {
+        subject.to_a.should == [1, 2, 0]
+      }
+    end
   end
 
   describe 'float' do
@@ -29,7 +46,7 @@ describe RtmTime::En do
         RtmTime::En.parse( '1.2h' ).to_h
       }
       it {
-        should == {:day => nil, :hour => 1, :min => 12}
+        should == {:day => 0, :hour => 1, :min => 12}
       }
     end
 
@@ -38,7 +55,7 @@ describe RtmTime::En do
         RtmTime::En.parse( '1h' ).to_h
       }
       it {
-        should == {:day => nil, :hour => 1, :min => 0}
+        should == {:day => 0, :hour => 1, :min => 0}
       }
     end
 
@@ -47,7 +64,7 @@ describe RtmTime::En do
         RtmTime::En.parse( '10m 1.5h ' ).to_h
       }
       it {
-        should = {:day => nil, :hour => 1, :min => 40}
+        should = {:day => 0, :hour => 1, :min => 40}
       }
     end
   end

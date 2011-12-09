@@ -11,11 +11,11 @@ module RtmTime
     def assort( num, unit )
       case unit
       when /\Ad/u
-        @day  = num.to_i
+        @day  ||= num.to_i
       when /\Ah/u
-        @hour = num.to_f
+        @hour ||= num.to_f
       when /\Am/u
-        @min  = num.to_i
+        @min  ||= num.to_i
       end
     end
   end
