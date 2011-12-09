@@ -14,8 +14,8 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "rtmt-ime"
-  gem.homepage = "http://github.com/wtnabe/rtmt-ime"
+  gem.name = "rtm-time"
+  gem.homepage = "http://github.com/wtnabe/rtm-time"
   gem.license = "BSD"
   gem.summary = %Q{A parser for RTM's estimate time}
   gem.description = %Q{parse and inspect RTM's estimate time}
