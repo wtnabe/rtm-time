@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "rtmt-ime"
   gem.homepage = "http://github.com/wtnabe/rtmt-ime"
   gem.license = "BSD"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A parser for RTM's estimate time}
+  gem.description = %Q{parse and inspect RTM's estimate time}
   gem.email = "wtnabe@gmail.com"
   gem.authors = ["wtnabe"]
   # dependencies defined in Gemfile
@@ -47,3 +47,5 @@ RDoc::Task.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+load File.dirname(__FILE__) + '/tasks/git.rake'
