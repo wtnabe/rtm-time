@@ -1,7 +1,7 @@
 = rtm-time
 
- * simple parser for RTM's estimate time string
- * convenience method convert from various object to ISO8601(UTC) time string
+* simple parser for RTM's estimate time string
+* convenience method convert from various object to ISO8601(UTC) time string
 
 == Contributing to rtm-time
  
