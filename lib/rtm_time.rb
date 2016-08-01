@@ -24,7 +24,7 @@ module RtmTime
     @hour = nil
     @min  = nil
 
-    parsed = time_str.scan(/(?:([0-9\.]+)\s*([^0-9]+|\z))/u)
+    parsed = time_str.sub(/[PT]/, ' ').scan(/(?:([0-9\.]+)\s*([^0-9]+|\z))/u)
 
     if parsed.size > 0
       #  d, h, m の順番にも縛りはない
